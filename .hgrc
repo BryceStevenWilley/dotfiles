@@ -4,12 +4,17 @@
 # username = Jane Doe <jdoe@example.com>
 username = Bryce Willey <bryce.steven.willey@gmail.com>
 
+[trusted]
+groups = private_repos
+
 [extensions]
 # uncomment these lines to enable some popular extensions
 # (see "hg help extensions" for more info)
 #
 # pager =
 # progress =
+rebase =
+graphlog =
 color =
 fetch =
 strip =
