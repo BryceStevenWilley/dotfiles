@@ -10,6 +10,9 @@ set softtabstop=4
 " speeds up scroll time sigfinicantly.
 set lazyredraw
 
+" Starts the new line at the last indentation level.
+set autoindent
+
 " Tell vim to remember things when we exit.
 " '10 : marks will be remembered for up to 10 previously edited file.
 " "100 : 100 lines per register
