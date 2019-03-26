@@ -10,14 +10,28 @@
     "files.autoSave": "onFocusChange",
     "latex-workshop.view.pdf.viewer": "tab",
     "cSpell.userWords": [
+        "Kavraki",
         "OMPL",
+        "Teleoperation",
+        "Voronoi",
         "discretization",
+        "holonomic",
+        "initializations",
         "kinodynamic",
         "optimality",
         "optimizers",
+        "polytopes",
+        "posteriori",
+        "precomputed",
         "probabilistically",
+        "retiming",
         "roadmap",
-        "superset"
+        "superset",
+        "unintuitive",
+        "voxel",
+        "voxels",
+        "waypoint",
+        "waypoints"
     ],
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -46,5 +60,7 @@
         "typescript",
         "typescriptreact",
         "yml"
-    ]
+    ],
+    "cmake-tools-helper.cmake_download_path": "/home/brycew/.vscode/extensions/maddouri.cmake-tools-helper-0.2.1/cmake_download",
+    "cmake.configureOnOpen": false
 }
