@@ -4,8 +4,10 @@ set number relativenumber
 
 " Turns tabs into spaces.
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+"set softtabstop=0 
+set tabstop=4
+
 
 " speeds up scroll time sigfinicantly.
 set lazyredraw
