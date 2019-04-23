@@ -35,6 +35,7 @@ values."
      yaml
      javascript
      python
+     cmake ;; :variables cmake-enable-cmake-ide-support t)
      (c-c++ :variables
            c-c++-default-mode-for-headers 'c++-mode
            c-c++-enable-clang-support t)
@@ -44,18 +45,26 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
-     ;; better-defaults
+     ;; Auto completion setup for new projects:
+     ;; Need .clang-complete:
+     ;;  wget https://raw.githubusercontent.com/Rip-Rip/clang_complete/master/bin/cc_args.py
+     ;;  mv cc_args.py ~/bin/cc_args.py
+     ;;  cd ~/bin/ && chmod +x cc_args.python
+     ;;  export CXX='cc_args.py g++'
+     ;;  cmake . (or catkin build, whatever)
+     ;;  find . | ag clang-complete | xargs cat | sort | uniq > .clang-complete
+     (auto-completion :variables auto-completion-enable-help-tooltip t)
+     better-defaults
      emacs-lisp
      git
      markdown
-     rust
-     ;;org
+     ;; rust
+     (org :variables org-enable-trello-support t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -114,6 +123,8 @@ values."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
+   ;; IDK, test told me to add this.
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -326,6 +337,49 @@ you should place your code here."
 	(defun my-c-setup()
 		(c-set-offset 'innamespace [0]))
 	(add-hook 'c++-mode-hook 'my-c-setup)
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (defun clang-format-bindings()
+    (define-key c++-mode-map [tab] 'clang-format-buffer))
+(spaceline-compile
+    '(((persp-name
+        workspace-number
+        window-number)
+       :fallback evil-state
+       :face highlight-face
+       :priority 100)
+      (anzu :priority 95)
+      auto-compile
+      ((buffer-modified buffer-size buffer-id remote-host)
+       :priority 98)
+      (major-mode :priority 79)
+      (process :when active)
+      ((flycheck-error flycheck-warning flycheck-info)
+       :when active
+       :priority 89)
+      (minor-modes :when active
+                   :priority 9)
+      (mu4e-alert-segment :when active)
+      (erc-track :when active)
+      (version-control :when active
+                       :priority 78)
+      (org-pomodoro :priority 85)
+      (org-clock :when active)
+      nyan-cat)
+    '(which-function
+      (python-pyvenv :fallback python-pyenv)
+      (purpose :priority 94)
+      (battery :when active)
+      (selection-info :priority 95)
+      input-method
+      ((buffer-encoding-abbrev
+        point-position
+        line-column)
+       :separator " | "
+       :priority 96)
+      (global :when active)
+      ; add here whatever your 'additional-segments were if you had any
+      (buffer-position :priority 99)
+      (hud :priority 99)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
