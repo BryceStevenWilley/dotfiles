@@ -1,0 +1,19 @@
+# Sets the default editor for things like git and matlab
+export EDITOR=vim
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# Bash history stuff: https://stackoverflow.com/questions/9457233/unlimited-bash-history
+HISTCONTROL=ignoredups
+# append to the history file, don't overwrite it
+shopt -s histappend
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.bash_eternal_history
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
