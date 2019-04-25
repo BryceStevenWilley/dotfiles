@@ -340,7 +340,8 @@ you should place your code here."
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (defun clang-format-bindings()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
-(spaceline-compile
+  ; Makes sure to keep pomodoros up and visible
+  (spaceline-compile
     '(((persp-name
         workspace-number
         window-number)
@@ -380,6 +381,15 @@ you should place your code here."
       ; add here whatever your 'additional-segments were if you had any
       (buffer-position :priority 99)
       (hud :priority 99)))
+
+  ; Makes workflow states
+  (setq org-todo-keywords
+        '((sequence "Future-Projects" "TODO" "Doing" "|" "Done")))
+  ; Color those states.
+  (setq org-todo-keyword-faces
+        '(("Future-Projects" . (:foreground "blue")) ("TODO" . org-warning)
+           ("Doing" . "yellow") ("Done" . "green")))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
