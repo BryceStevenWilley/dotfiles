@@ -95,7 +95,7 @@ fi
 
 # Automatically source extra files depending on which computer you're on.
 case "$HOSTNAME" in
-    'sean-Percision-Tower-5810')
+    'sean-Precision-Tower-5810')
         . $HOME/.bash_work
         ;;
     'brycew-desktop')
