@@ -1,0 +1,10 @@
+# Locally installed binaries
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin # Go PATH env.
+export PATH=$PATH:$HOME/node-v10.15.3-linux-x64/bin # Node/npm
+
+# Rust/cargo stuff
+export PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
+
+# CCache stuff
+export PATH=/usr/lib/ccache:$PATH

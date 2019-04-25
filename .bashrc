@@ -98,4 +98,7 @@ case "$HOSTNAME" in
     'sean-Percision-Tower-5810')
         . $HOME/.bash_work
         ;;
+    'brycew-desktop')
+        . $HOME/.bash_home
+        ;;
 esac
