@@ -340,6 +340,10 @@ you should place your code here."
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (defun clang-format-bindings()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  ; Load CUDA files in C++ context
+  (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+
   ; Makes sure to keep pomodoros up and visible
   (spaceline-compile
     '(((persp-name
@@ -427,9 +431,19 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Documents/org_mode/trello")))
+ '(org-default-notes-file "/home/brycew/Documents/org_mode/notes.org")
+ '(org-directory "~/Documents/org_mode")
+ '(org-pomodoro-audio-player "/usr/bin/aplay")
  '(org-pomodoro-finished-sound "/home/brycew/.spacemacs_data/fasten-seat-belt.wav")
- '(org-pomodoro-long-break-sound "/home/brycew/.spacemacs_data/fasten-seat-belt.wav")
- '(org-pomodoro-short-break-sound "/home/brycew/.spacemacs_data/fasten-seat-belt.wav")
+ '(org-pomodoro-finished-sound-args nil)
+ '(org-pomodoro-length 35)
+ '(org-pomodoro-long-break-length 15)
+ '(org-pomodoro-long-break-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
+ '(org-pomodoro-long-break-sound-args "")
+ '(org-pomodoro-short-break-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
+ '(org-pomodoro-short-break-sound-p t)
+ '(org-pomodoro-start-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
+ '(org-pomodoro-start-sound-args "")
  '(org-trello-current-prefix-keybinding "C-c o" nil (org-trello))
  '(package-selected-packages
    (quote
