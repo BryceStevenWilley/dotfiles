@@ -12,3 +12,7 @@ alias killl="kill %1"
 
 # Alias the dotfile git setup
 alias config='/usr/bin/git --git-dir=/home/brycew/.cfg/ --work-tree=/home/brycew'
+
+# Play a plucked guitar string with no logging and volume of 0.5
+alias pluck='play -V0 -q -n synth 2.0 pluck C5 vol 0.5'
+ 

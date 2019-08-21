@@ -90,12 +90,13 @@ if [ -d /opt/ros/ ]; then
             source /opt/ros/melodic/setup.bash
             ;;
     esac
+    catkin() { command catkin "$@"; pluck & }
 fi
 
 
 # Automatically source extra files depending on which computer you're on.
 case "$HOSTNAME" in
-    'sean-Precision-Tower-5810')
+    'brycew-Precision-Tower-5810')
         . $HOME/.bash_work
         ;;
     'brycew-desktop')

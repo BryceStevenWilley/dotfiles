@@ -9,14 +9,14 @@
         editor = vim
 [github]
 	user = BryceStevenWilley
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
 [alias]
 	unpushed = log --branches --not --remotes --no-walk --decorate --oneline
 [merge]
 	ff = only
 [reere]
 	enabled = 1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

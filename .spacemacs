@@ -56,6 +56,7 @@ values."
      (auto-completion :variables auto-completion-enable-help-tooltip t)
      better-defaults
      emacs-lisp
+     shell
      git
      markdown
      ;; rust
@@ -65,7 +66,8 @@ values."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     ;; version-control
+     version-control
+     neotree
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
