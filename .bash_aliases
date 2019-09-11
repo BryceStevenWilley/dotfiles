@@ -16,3 +16,28 @@ alias config='/usr/bin/git --git-dir=/home/brycew/.cfg/ --work-tree=/home/brycew
 # Play a plucked guitar string with no logging and volume of 0.5
 alias pluck='play -V0 -q -n synth 2.0 pluck C5 vol 0.5'
  
+# Will-style Aliasing
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias u='cd ..'
+alias uu='cd ../../'
+alias uuu='cd ../../../'
+alias uuuu='cd ../../../../'
+alias LS='ls'
+alias sl='ls'
+alias here='nautilus .'
+alias here_rst='nautilus -q && nautilus &'
+alias nanobash='nano ~/.bashrc'
+alias src='source ~/.bashrc'
+alias udev='sudo udevadm trigger'
+alias python_pip='sudo /usr/bin/pip install'
+
+# Building
+alias m='make -j8'
+alias cbr='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release'
+alias cbd='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Debug'
+function cbpr() { catkin build "$@" --cmake-args -DCMAKE_BUILD_TYPE=Release; }
+function cbpd() { catkin build "$@" --cmake-args -DCMAKE_BUILD_TYPE=Debug; }
