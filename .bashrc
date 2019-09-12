@@ -92,7 +92,7 @@ if [ -d /opt/ros/ ]; then
             source /opt/ros/melodic/setup.bash
             ;;
     esac
-    catkin() { command time -f %E -o /tmp/time_tracking.txt catkin "$@"; pluck; \
+    catkim() { command time -f %E -o /tmp/time_tracking.txt catkin "$@"; pluck; \
                write_times.py record /tmp/time_tracking.txt /media/$USER/LANYARD_BLU/tracking/meditation.txt temp;}
     #if [ -e /media/$USER/LANYARD_BLU ]; then write_times.py; fi; }
 fi
