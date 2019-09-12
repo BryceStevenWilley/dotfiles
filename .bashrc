@@ -80,6 +80,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="/home/$USER/.scripts:$PATH"
+
 # Automatically source ROS commands based on current operating system
 if [ -d /opt/ros/ ]; then
     case "$DISTRIB_CODENAME" in
@@ -90,7 +92,9 @@ if [ -d /opt/ros/ ]; then
             source /opt/ros/melodic/setup.bash
             ;;
     esac
-    catkin() { command catkin "$@"; pluck & }
+    catkin() { command time -f %E -o /tmp/time_tracking.txt catkin "$@"; pluck; \
+               write_times.py record /tmp/time_tracking.txt /media/$USER/LANYARD_BLU/tracking/meditation.txt temp;}
+    #if [ -e /media/$USER/LANYARD_BLU ]; then write_times.py; fi; }
 fi
 
 
@@ -106,4 +110,3 @@ case "$HOSTNAME" in
         . $HOME/.bash_demo
         ;;
 esac
-
