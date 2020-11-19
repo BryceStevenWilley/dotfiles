@@ -82,6 +82,8 @@ fi
 
 export PATH="/home/$USER/.scripts:$PATH"
 
+ulimit -c unlimited
+
 # Automatically source ROS commands based on current operating system
 if [ -d /opt/ros/ ]; then
     case "$DISTRIB_CODENAME" in
@@ -96,7 +98,6 @@ if [ -d /opt/ros/ ]; then
                write_times.py record /tmp/time_tracking.txt /media/$USER/LANYARD_BLU/tracking/meditation.txt temp;}
     #if [ -e /media/$USER/LANYARD_BLU ]; then write_times.py; fi; }
 fi
-
 
 # Automatically source extra files depending on which computer you're on.
 case "$HOSTNAME" in

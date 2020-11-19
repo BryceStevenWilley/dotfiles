@@ -1,12 +1,13 @@
 {
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "terminal.integrated.fontSize": 13,
+    "clang-format.executable": "/usr/bin/clang-format-6.0",
     "window.zoomLevel": -1,
     "terminal.integrated.shell.linux": "bash",
     "terminal.integrated.scrollback": 1000000,
     "editor.minimap.enabled" : false,
-    "editor.wordWrapColumn" : 120,
-    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn" : 100,
+    "editor.wordWrap": "wordWrapColumn",
     "files.autoSave": "onFocusChange",
     "latex-workshop.view.pdf.viewer": "tab",
     "cSpell.userWords": [
@@ -62,5 +63,21 @@
         "yml"
     ],
     "cmake-tools-helper.cmake_download_path": "/home/brycew/.vscode/extensions/maddouri.cmake-tools-helper-0.2.1/cmake_download",
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "C_Cpp.clang_format_sortIncludes": true,
+    "C_Cpp.default.cppStandard": "c++11",
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.autofetch": true,
+    "editor.parameterHints.enabled": false,
+    "vim.useSystemClipboard": true,
+    "files.trimTrailingWhitespace": true,
+    "C_Cpp.autocomplete": "Disabled",
+    "workbench.sideBar.location": "left"
 }
