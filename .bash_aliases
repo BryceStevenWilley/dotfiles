@@ -46,3 +46,15 @@ alias cbd='catkin build --cmake-args -DCMAKE_BUILD_TYPE=Debug'
 function cbpr() { catkin build "$@" --cmake-args -DCMAKE_BUILD_TYPE=Release; }
 function cbpd() { catkin build "$@" --cmake-args -DCMAKE_BUILD_TYPE=Debug; }
 function cbt() { catkin build "$@" && catkin run_tests --no-deps "$@"; }
+
+# $1: the folder to sync
+function dpt_push_folder() {
+  local fold=$1
+  ls $fold | xargs -I_paper dptrp1 --addr 192.168.4.37 upload "$fold"/_paper Document/Academic/"$fold"/_paper
+}
+
+# $1: the folder to sync
+function dpt_pull_folder() {
+  local fold=$1
+  ls $fold | xargs -I_paper dptrp1 --addr 192.168.4.37 download Document/Academic/"$fold"_paper "$fold"/_paper
+}

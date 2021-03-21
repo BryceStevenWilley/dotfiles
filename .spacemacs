@@ -30,9 +30,12 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(yaml
+     ;;php
+     ;;csv
+     typescript
      html
-     yaml
+     ;;yaml
      javascript
      python
      cmake ;; :variables cmake-enable-cmake-ide-support t)
@@ -60,7 +63,7 @@ values."
      git
      markdown
      ;; rust
-     (org :variables org-enable-trello-support t)
+     org ;;():variables org-enable-trello-support t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -315,7 +318,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'changed
    ))
 
 (defun dotspacemacs/user-init ()
@@ -336,6 +339,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (setq helm-split-window-inside-p t)
 	(defun my-c-setup()
 		(c-set-offset 'innamespace [0]))
 	(add-hook 'c++-mode-hook 'my-c-setup)
@@ -369,8 +373,8 @@ you should place your code here."
       (erc-track :when active)
       (version-control :when active
                        :priority 78)
-      (org-pomodoro :priority 85)
-      (org-clock :when active)
+      ;;(org-pomodoro :priority 85)
+      ;;(org-clock :when active)
       nyan-cat)
     '(which-function
       (python-pyvenv :fallback python-pyenv)
@@ -388,13 +392,16 @@ you should place your code here."
       (buffer-position :priority 99)
       (hud :priority 99)))
 
+  ; Trying to fix freezing
+  (setq powerline-default-separator 'utf-8)
+
   ; Makes workflow states
-  (setq org-todo-keywords
-        '((sequence "Future-Projects" "TODO" "Doing" "|" "Done")))
+  ;;(setq org-todo-keywords
+  ;;      '((sequence "Future-Projects" "TODO" "Doing" "|" "Done")))
   ; Color those states.
-  (setq org-todo-keyword-faces
-        '(("Future-Projects" . (:foreground "blue")) ("TODO" . org-warning)
-           ("Doing" . "yellow") ("Done" . "green")))
+  ;;(setq org-todo-keyword-faces
+  ;;      '(("Future-Projects" . (:foreground "blue")) ("TODO" . org-warning)
+  ;;         ("Doing" . "yellow") ("Done" . "green")))
 
   ; Fixes https://github.com/syl20bnr/spacemacs
   (defun kill-minibuffer ()
@@ -414,7 +421,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-pos-tip unfill mwim helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern company-statistics company-c-headers company-anaconda auto-yasnippet ac-ispell auto-complete toml-mode racer pos-tip cargo rust-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flyspell-correct-helm flyspell-correct auto-dictionary yaml-mode tern smartparens highlight projectile helm helm-core org-plus-contrib magit git-commit disaster cmake-mode clang-format web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode yapfify xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle shell-pop restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ob-elixir flycheck-mix flycheck-credo flycheck alchemist company elixir-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode markdown-mode dash-functional gitignore-mode magit-popup ghub treepy graphql with-editor pythonic))))
+    (git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ transient dash git-gutter diff-hl flycheck-pos-tip unfill mwim helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern company-statistics company-c-headers company-anaconda auto-yasnippet ac-ispell auto-complete toml-mode racer pos-tip cargo rust-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flyspell-correct-helm flyspell-correct auto-dictionary yaml-mode tern smartparens highlight projectile helm helm-core org-plus-contrib magit git-commit disaster cmake-mode clang-format web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode yapfify xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle shell-pop restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ob-elixir flycheck-mix flycheck-credo flycheck alchemist company elixir-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode markdown-mode dash-functional gitignore-mode magit-popup ghub treepy graphql with-editor pythonic))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

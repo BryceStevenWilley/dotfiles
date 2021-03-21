@@ -7,6 +7,7 @@
     "terminal.integrated.scrollback": 1000000,
     "editor.minimap.enabled" : false,
     "editor.wordWrapColumn" : 100,
+    "editor.wordWrapColumn": 120,
     "editor.wordWrap": "wordWrapColumn",
     "files.autoSave": "onFocusChange",
     "latex-workshop.view.pdf.viewer": "tab",
@@ -15,10 +16,16 @@
         "OMPL",
         "Teleoperation",
         "Voronoi",
+        "bokeh",
+        "bootcamp",
+        "cenpy",
         "discretization",
+        "docassemble",
+        "groupby",
         "holonomic",
         "initializations",
         "kinodynamic",
+        "numpy",
         "optimality",
         "optimizers",
         "polytopes",
@@ -27,12 +34,16 @@
         "probabilistically",
         "retiming",
         "roadmap",
+        "scipy",
+        "subquestion",
         "superset",
+        "timeit",
         "unintuitive",
         "voxel",
         "voxels",
         "waypoint",
-        "waypoints"
+        "waypoints",
+        "willey"
     ],
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -65,19 +76,47 @@
     "cmake-tools-helper.cmake_download_path": "/home/brycew/.vscode/extensions/maddouri.cmake-tools-helper-0.2.1/cmake_download",
     "cmake.configureOnOpen": false,
     "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
     "vsicons.dontShowNewVersionMessage": true,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
     "C_Cpp.clang_format_sortIncludes": true,
     "C_Cpp.default.cppStandard": "c++11",
-    "editor.tabSize": 2,
     "diffEditor.ignoreTrimWhitespace": false,
-    "git.autofetch": true,
     "editor.parameterHints.enabled": false,
     "vim.useSystemClipboard": true,
     "files.trimTrailingWhitespace": true,
     "C_Cpp.autocomplete": "Disabled",
-    "workbench.sideBar.location": "left"
+    "workbench.sideBar.location": "left",
+    "files.exclude": {
+        "**/devel/**": true,
+        "**/install/**": true
+    },
+    "C_Cpp.updateChannel": "Insiders",
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "python.showStartPage": false,
+    "python.venvPath": "/home/brycew/Developer/LITLab/litlab_venv/",
+    "cSpell.enableFiletypes": [
+        "!python"
+    ],
+    "python.linting.pycodestyleEnabled": true,
+    "markdownlint.config": {
+      "MD022": {
+          "lines_below":0
+      }
+    },
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length 99"
+    ],
+    "workbench.editorAssociations": [
+      {
+        "viewType": "jupyter.notebook.ipynb",
+        "filenamePattern": "*.ipynb"
+      }
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.tabSize": 2
 }

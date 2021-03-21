@@ -64,6 +64,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+ulimit -c unlimited
+
 # General bash things that I want on every machine
 if [ -f ~/.bash_misc ]; then
     . ~/.bash_misc
@@ -91,7 +93,7 @@ if [ -d /opt/ros/ ]; then
             source /opt/ros/kinetic/setup.bash
             ;;
         'bionic')
-            source /opt/ros/melodic/setup.bash
+            #source /opt/ros/melodic/setup.bash
             ;;
     esac
     catkim() { command time -f %E -o /tmp/time_tracking.txt catkin "$@"; pluck; \
@@ -111,3 +113,7 @@ case "$HOSTNAME" in
         . $HOME/.bash_demo
         ;;
 esac
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

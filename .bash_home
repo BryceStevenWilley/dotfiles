@@ -1,10 +1,26 @@
 # Locally installed binaries
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin # Go PATH env.
 export PATH=$PATH:$HOME/node-v10.15.3-linux-x64/bin # Node/npm
+export GOPATH=$HOME/go
 
 # Rust/cargo stuff
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.cargo/env
 
 # CCache stuff
-export PATH=/usr/lib/ccache:$PATH
+#export PATH="/usr/lib/ccache:$PATH"
+
+# CUDA stuff
+export PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1:$PATH"
+
+# Docker stuff
+export PATH="/usr/local/bin:$PATH"
+
+# Dart (for maintaining website)
+export PATH="$PATH:/usr/lib/dart/bin"
+
+# Julia
+export PATH="$PATH:$HOME/julia-1.4.1/bin"
+
+# Micro$oft don't track me plz
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
