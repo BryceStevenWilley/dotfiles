@@ -64,8 +64,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-ulimit -c unlimited
-
 # General bash things that I want on every machine
 if [ -f ~/.bash_misc ]; then
     . ~/.bash_misc
@@ -103,17 +101,39 @@ fi
 
 # Automatically source extra files depending on which computer you're on.
 case "$HOSTNAME" in
-    'brycew-Precision-Tower-5810')
-        . $HOME/.bash_work
-        ;;
-    'brycew-desktop')
+    'brycew--fossa-desktop')
         . $HOME/.bash_home
-        ;;
-    'demo2-Precision-7920-Tower')
-        . $HOME/.bash_demo
         ;;
 esac
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Adds non-apt maven (only one compatible with Java 17)
+export M2_HOME="/opt/maven"
+export PATH="$M2_HOME/bin:$PATH" 
+
+# export PATH="$PATH:/home/$USER/apache-cxf-4.0.0/bin"
+export PATH="$PATH:/home/$USER/Developer/LITLab/cxf/distribution/target/apache-cxf-4.0.1-SNAPSHOT/apache-cxf-4.0.1-SNAPSHOT/bin"
+export PATH="$PATH:/home/$USER/.local/bin/Twine-2.5.1-Linux-x64"
+
+# Loads NVM. Don't use too much, and slows down new terminals way too much
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Uncomment to turn off extra settings used when profiling bash start up
+# https://stackoverflow.com/a/5015179/11416267
+#set +x
+#exec 2>&3 3>&-
+
+# Enables github cli tool completions
+eval "$(gh completion -s bash)"
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/opt/gradle/gradle-7.5.1/bin
+
+PROMPT_COMMAND='CUR_PWD=`pwd`; echo -en "\033]0; $("basename" "$CUR_PWD") \a"'
+
+. /home/brycew/.asdf/asdf.sh
+. /home/brycew/.asdf/completions/asdf.bash
+eval "$(direnv hook bash)"
+. "$HOME/.cargo/env"

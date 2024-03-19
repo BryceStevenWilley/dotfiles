@@ -31,23 +31,24 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(yaml
+     ;;yaml
      ;;php
      ;;csv
-     typescript
-     html
+     ;;typescript
+     ;;html
      ;;yaml
-     javascript
+     ;;javascript
      python
-     cmake ;; :variables cmake-enable-cmake-ide-support t)
-     (c-c++ :variables
-           c-c++-default-mode-for-headers 'c++-mode
-           c-c++-enable-clang-support t)
+     ;;cmake ;; :variables cmake-enable-cmake-ide-support t)
+     ;;(c-c++ :variables
+     ;;      c-c++-default-mode-for-headers 'c++-mode
+     ;;      c-c++-enable-clang-support t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     ;;helm
      ;; Auto completion setup for new projects:
      ;; Need .clang-complete:
      ;;  wget https://raw.githubusercontent.com/Rip-Rip/clang_complete/master/bin/cc_args.py
@@ -56,21 +57,20 @@ values."
      ;;  export CXX='cc_args.py g++'
      ;;  cmake . (or catkin build, whatever)
      ;;  find . | ag clang-complete | xargs cat | sort | uniq > .clang-complete
-     (auto-completion :variables auto-completion-enable-help-tooltip t)
-     better-defaults
+     ;;(auto-completion :variables auto-completion-enable-help-tooltip t)
+     ;;better-defaults
      emacs-lisp
-     shell
      git
      markdown
      ;; rust
-     org ;;():variables org-enable-trello-support t)
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     spell-checking
-     syntax-checking
+     ;;org ;;():variables org-enable-trello-support t)
+     ;;(shell :variables
+     ;;       shell-default-height 30
+     ;;       shell-default-position 'bottom)
+     ;;spell-checking
+     ;;syntax-checking
      version-control
-     neotree
+     ;;neotree
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -351,46 +351,46 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 
   ; Makes sure to keep pomodoros up and visible
-  (spaceline-compile
-    '(((persp-name
-        workspace-number
-        window-number)
-       :fallback evil-state
-       :face highlight-face
-       :priority 100)
-      (anzu :priority 95)
-      auto-compile
-      ((buffer-modified buffer-size buffer-id remote-host)
-       :priority 98)
-      (major-mode :priority 79)
-      (process :when active)
-      ((flycheck-error flycheck-warning flycheck-info)
-       :when active
-       :priority 89)
-      (minor-modes :when active
-                   :priority 9)
-      (mu4e-alert-segment :when active)
-      (erc-track :when active)
-      (version-control :when active
-                       :priority 78)
+  ;;(spaceline-compile
+  ;;  '(((persp-name
+  ;;      workspace-number
+  ;;      window-number)
+  ;;     :fallback evil-state
+  ;;     :face highlight-face
+  ;;     :priority 100)
+  ;;    (anzu :priority 95)
+  ;;    auto-compile
+  ;;    ((buffer-modified buffer-size buffer-id remote-host)
+  ;;     :priority 98)
+   ;;   (major-mode :priority 79)
+   ;;   (process :when active)
+  ;;    ((flycheck-error flycheck-warning flycheck-info)
+  ;;     :when active
+  ;;     :priority 89)
+  ;;    (minor-modes :when active
+  ;;                 :priority 9)
+  ;;    (mu4e-alert-segment :when active)
+  ;;   (erc-track :when active)
+  ;;    (version-control :when active
+  ;;                     :priority 78)
       ;;(org-pomodoro :priority 85)
       ;;(org-clock :when active)
-      nyan-cat)
-    '(which-function
-      (python-pyvenv :fallback python-pyenv)
-      (purpose :priority 94)
-      (battery :when active)
-      (selection-info :priority 95)
-      input-method
-      ((buffer-encoding-abbrev
-        point-position
-        line-column)
-       :separator " | "
-       :priority 96)
-      (global :when active)
-      ; add here whatever your 'additional-segments were if you had any
-      (buffer-position :priority 99)
-      (hud :priority 99)))
+  ;;    nyan-cat)
+  ;;  '(which-function
+  ;;    (python-pyvenv :fallback python-pyenv)
+  ;;    (purpose :priority 94)
+  ;;    (battery :when active)
+  ;;    (selection-info :priority 95)
+  ;;    input-method
+  ;;    ((buffer-encoding-abbrev
+  ;;      point-position
+  ;;      line-column)
+  ;;     :separator " | "
+  ;;    :priority 96)
+  ;;    (global :when active)
+  ;;    ; add here whatever your 'additional-segments were if you had any
+  ;;    (buffer-position :priority 99)
+  ;;    (hud :priority 99)))
 
   ; Trying to fix freezing
   (setq powerline-default-separator 'utf-8)
@@ -442,18 +442,6 @@ This function is called at the very end of Spacemacs initialization."
  '(org-agenda-files (quote ("~/Documents/org_mode/trello")))
  '(org-default-notes-file "/home/brycew/Documents/org_mode/notes.org")
  '(org-directory "~/Documents/org_mode")
- '(org-pomodoro-audio-player "/usr/bin/aplay")
- '(org-pomodoro-finished-sound "/home/brycew/.spacemacs_data/fasten-seat-belt.wav")
- '(org-pomodoro-finished-sound-args nil)
- '(org-pomodoro-length 35)
- '(org-pomodoro-long-break-length 15)
- '(org-pomodoro-long-break-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
- '(org-pomodoro-long-break-sound-args "")
- '(org-pomodoro-short-break-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
- '(org-pomodoro-short-break-sound-p t)
- '(org-pomodoro-start-sound "/home/brycew/.spacemacs_data/drum_pomodoro.wav")
- '(org-pomodoro-start-sound-args "")
- '(org-trello-current-prefix-keybinding "C-c o" nil (org-trello))
  '(package-selected-packages
    (quote
     (flycheck-pos-tip unfill mwim helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-tern company-statistics company-c-headers company-anaconda auto-yasnippet ac-ispell auto-complete toml-mode racer pos-tip cargo rust-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode flyspell-correct-helm flyspell-correct auto-dictionary yaml-mode tern smartparens highlight projectile helm helm-core org-plus-contrib magit git-commit disaster cmake-mode clang-format web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode yapfify xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline smeargle shell-pop restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox orgit org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint indent-guide hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav dumb-jump diminish define-word cython-mode column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ob-elixir flycheck-mix flycheck-credo flycheck alchemist company elixir-mode phpunit phpcbf php-extras php-auto-yasnippets drupal-mode php-mode markdown-mode dash-functional gitignore-mode magit-popup ghub treepy graphql with-editor pythonic))))

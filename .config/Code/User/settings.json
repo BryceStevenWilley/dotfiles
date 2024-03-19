@@ -2,48 +2,57 @@
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "terminal.integrated.fontSize": 13,
     "clang-format.executable": "/usr/bin/clang-format-6.0",
-    "window.zoomLevel": -1,
     "terminal.integrated.shell.linux": "bash",
     "terminal.integrated.scrollback": 1000000,
     "editor.minimap.enabled" : false,
     "editor.wordWrapColumn" : 100,
     "editor.wordWrapColumn": 120,
-    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrap": "off",
     "files.autoSave": "onFocusChange",
     "latex-workshop.view.pdf.viewer": "tab",
     "cSpell.userWords": [
-        "Kavraki",
-        "OMPL",
-        "Teleoperation",
-        "Voronoi",
-        "bokeh",
-        "bootcamp",
-        "cenpy",
-        "discretization",
-        "docassemble",
-        "groupby",
-        "holonomic",
-        "initializations",
-        "kinodynamic",
-        "numpy",
-        "optimality",
-        "optimizers",
-        "polytopes",
-        "posteriori",
-        "precomputed",
-        "probabilistically",
-        "retiming",
-        "roadmap",
-        "scipy",
-        "subquestion",
-        "superset",
-        "timeit",
-        "unintuitive",
-        "voxel",
-        "voxels",
-        "waypoint",
-        "waypoints",
-        "willey"
+      "addendums",
+      "Auteurs",
+      "bokeh",
+      "bootcamp",
+      "cenpy",
+      "Colarusso",
+      "discretization",
+      "docassemble",
+      "Efile",
+      "groupby",
+      "holonomic",
+      "initializations",
+      "Kavraki",
+      "kinodynamic",
+      "mypy",
+      "numpy",
+      "OMPL",
+      "optimality",
+      "optimizers",
+      "polytopes",
+      "posteriori",
+      "precomputed",
+      "probabilistically",
+      "Quinten",
+      "retiming",
+      "roadmap",
+      "scipy",
+      "signin",
+      "Steenhuis",
+      "subquestion",
+      "superset",
+      "Teleoperation",
+      "Tetris",
+      "timeit",
+      "unintuitive",
+      "Voronoi",
+      "voxel",
+      "voxels",
+      "waypoint",
+      "waypoints",
+      "wcag",
+      "willey"
     ],
     "cSpell.enabledLanguageIds": [
         "asciidoc",
@@ -81,11 +90,9 @@
         "editor.defaultFormatter": "xaver.clang-format"
     },
     "C_Cpp.clang_format_sortIncludes": true,
-    "C_Cpp.default.cppStandard": "c++11",
-    "diffEditor.ignoreTrimWhitespace": false,
+		"C_Cpp.default.cppStandard": "c++11",
     "editor.parameterHints.enabled": false,
     "vim.useSystemClipboard": true,
-    "files.trimTrailingWhitespace": true,
     "C_Cpp.autocomplete": "Disabled",
     "workbench.sideBar.location": "left",
     "files.exclude": {
@@ -98,10 +105,19 @@
     "python.showStartPage": false,
     "python.venvPath": "/home/brycew/Developer/LITLab/litlab_venv/",
     "cSpell.enableFiletypes": [
-        "!python"
+      "!python",
+      "yaml"
     ],
     "python.linting.pycodestyleEnabled": true,
     "markdownlint.config": {
+
+      "MD013": false,
+      "MD033": false,
+      "MD012": false,
+      "MD032": false,
+      "MD024": {
+        "siblings_only": true
+      },
       "MD022": {
           "lines_below":0
       }
@@ -109,14 +125,79 @@
     "python.linting.pycodestyleArgs": [
         "--max-line-length 99"
     ],
-    "workbench.editorAssociations": [
-      {
-        "viewType": "jupyter.notebook.ipynb",
-        "filenamePattern": "*.ipynb"
-      }
-    ],
+    "workbench.editorAssociations": {
+        "*.docx": "default",
+        "*.ipynb": "jupyter-notebook"
+    },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "editor.tabSize": 2
+},
+		"editor.cursorStyle": "line",
+		"editor.lineNumbers": "on",
+        "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+        "notebook.cellToolbarLocation": {
+            "default": "right",
+            "jupyter-notebook": "left"
+        },
+        "editor.fontFamily": "'IBM Plex Mono', 'monospace', 'Nono Sans Mono', monospace, 'Droid Sans Fallback'",
+        "editor.renderWhitespace": "boundary",
+        "telemetry.telemetryLevel": "crash",
+        "redhat.telemetry.enabled": false,
+        "ooxml.outPutFilePath": "/tmp/ooxml_out.json",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[html]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.accessibilitySupport": "off",
+        "[xml]": {
+          "editor.defaultFormatter": "redhat.vscode-xml"
+        },
+        "markdownlint.run": "onSave",
+        "editor.unicodeHighlight.allowedCharacters": {
+          "’": true
+        },
+        "terminal.integrated.enableMultiLinePasteWarning": false,
+        "markdownlint.ignore": [
+        
+        ],
+        "git.confirmSync": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter"
+        },
+        "java.format.settings.profile": "GoogleStyle",
+        "xml.server.vmargs": "-Xmx128M",
+        "workbench.colorTheme": "Default Dark+",
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "black-formatter.args": [
+          "--line-length 120"
+        ],
+        "vim.commandLineModeKeyBindings": [
+
+        ],
+        "vim.handleKeys": {
+        	"<C-p>": false
+        },
+        "accessibility.verbosity.inlineChat": false,
+        "accessibility.verbosity.inlineCompletions": false,
+        "accessibility.verbosity.panelChat": false,
+        "accessibility.verbosity.terminal": false,
+        "accessibility.verbosity.hover": false,
+        "accessibility.verbosity.keybindingsEditor": false,
+        "accessibility.verbosity.notebook": false,
+        "accessibility.verbosity.notification": false,
+        "extensions.ignoreRecommendations": true,
+        "accessibility.verbosity.emptyEditorHint": false,
+        "window.zoomLevel": -1,
+        "[css]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[scss]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "explorer.confirmPasteNative": false,
 }

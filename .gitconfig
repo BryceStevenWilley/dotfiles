@@ -1,7 +1,7 @@
 [user]
 	email = Bryce.Steven.Willey@gmail.com
 	name = Bryce Willey
-	signingkey = 4A10FDAE955F3B94BCBADB009643EF1E5ADEE6A1
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICodhFVmX+5GX3ceLlpV6j5DE9uzxIvS8EhK20Q4rR/p
 [credential]
 	helper = cache --timeout=36000
 [push]
@@ -14,20 +14,64 @@
     date = relative
 [format]
     pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
+[commit]
+    verbose = true
+	gpgSign = true
 [alias]
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg = lg1
 	unpushed = log --branches --not --remotes --no-walk --decorate --pretty
+    checout = checkout
+    chekcout = checkout
+    cheekout = checkout
+    checkotu = checkout
+    chekcotu = checkout
+    cehkcout = checkout
+    checoket = checkout
+    chkcoeut = checkout
+    checout = checkout
+    cehckout = checkout
+    commout = commit
+    comimt = commit
+    commimt = commit
+    ocmit = commit
+    stats = status
+    satus = status
+    statu = status
+    stats = status
+    statsu = status
+    stauts = status
+    status- = status
+    satatus = status
+    saatus = status
+    sattus = status
+    psush = push
+    psuh = push
+    branrch = branch
+    brnch = branch
+    branh = branch
+    brach = branch
+    barch = branch
+    brarnch = branch
+    barchn = branch
+    bracnhn = branch
+    branhc = branch
+    brarnch = branch
+    bracnh = branch
 [merge]
 	ff = only
 [reere]
 	enabled = 1
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [sendemail]
 	from = Bryce Willey <bryce.steven.willey@gmail.com>
 	smtpServer = smtp.gmail.com
 	smtpUser = bryce.steven.willey@gmail.com
 	smtpEncryption = tls
     smtpServerPort = 587
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/brycew/.ssh/allowed_signers
+[init]
+	defaultBranch = main

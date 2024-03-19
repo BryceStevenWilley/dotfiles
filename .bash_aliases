@@ -15,11 +15,14 @@ alias config='/usr/bin/git --git-dir=/home/brycew/.cfg/ --work-tree=/home/brycew
 
 # Play a plucked guitar string with no logging and volume of 0.5
 alias pluck='play -V0 -q -n synth 2.0 pluck C5 vol 0.5'
+function alarm() { sleep "$@" && lame --quiet --decode --mp3input ~/Music/pilotredsun\ -\ dimweb.mp3 - -  | pacat; }
 
 alias rapidstatus='ls . | grep "rapid*" | xargs -I{} sh -c "(cd {}; echo "\""{}"\""; git rev-parse --abbrev-ref HEAD; echo)"';
  
 # Will-style Aliasing
+# Missing spaces in commands
 alias cd..='cd ..'
+alias code.='code .'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -35,7 +38,7 @@ alias here_rst='nautilus -q && nautilus &'
 alias nanobash='nano ~/.bashrc'
 alias src='source ~/.bashrc'
 alias udev='sudo udevadm trigger'
-alias python_pip='sudo /usr/bin/pip install'
+# alias python_pip='sudo /usr/bin/pip install'
 # only useful if emacs is always open
 #alias magit='emacsclient -n -e \(magit-status\)'
 
@@ -50,11 +53,22 @@ function cbt() { catkin build "$@" && catkin run_tests --no-deps "$@"; }
 # $1: the folder to sync
 function dpt_push_folder() {
   local fold=$1
-  ls $fold | xargs -I_paper dptrp1 --addr 192.168.4.37 upload "$fold"/_paper Document/Academic/"$fold"/_paper
+  for item in "$fold"/*
+  do
+    dptrp1 --addr 192.168.4.37 upload "$item" Document/Academic/"$item"
+  done
 }
 
 # $1: the folder to sync
 function dpt_pull_folder() {
   local fold=$1
-  ls $fold | xargs -I_paper dptrp1 --addr 192.168.4.37 download Document/Academic/"$fold"_paper "$fold"/_paper
+  for item in "$fold"/*
+  do
+    dptrp1 --addr 192.168.4.37 download Document/Academic/"$item" "$item"
+  done
+}
+
+function dpt_bulk_download() {
+  local fi=$1
+  dptrp1 --addr 192.168.4.37 download $1 Downloads
 }
