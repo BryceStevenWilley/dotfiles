@@ -11,7 +11,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias killl="kill %1"
 
 # Alias the dotfile git setup
-alias config='/usr/bin/git --git-dir=/home/brycew/.cfg/ --work-tree=/home/brycew'
+alias config='/usr/bin/git --git-dir=/home/bryce/.cfg/ --work-tree=/home/bryce'
 
 # Play a plucked guitar string with no logging and volume of 0.5
 alias pluck='play -V0 -q -n synth 2.0 pluck C5 vol 0.5'
@@ -36,11 +36,16 @@ alias sl='ls'
 alias here='nautilus .'
 alias here_rst='nautilus -q && nautilus &'
 alias nanobash='nano ~/.bashrc'
+alias vimbash='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 alias udev='sudo udevadm trigger'
 # alias python_pip='sudo /usr/bin/pip install'
 # only useful if emacs is always open
 #alias magit='emacsclient -n -e \(magit-status\)'
+
+alias cs="xclip -selection clipboard"
+
+alias qmake=qmake6
 
 # Building
 alias m='make -j8'

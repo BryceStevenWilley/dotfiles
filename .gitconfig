@@ -4,24 +4,34 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICodhFVmX+5GX3ceLlpV6j5DE9uzxIvS8EhK20Q4rR/p
 [credential]
 	helper = cache --timeout=36000
+[help]
+	# Run suggested command after 1 second
+	autocorrect = 10
 [push]
 	default = simple
+    autoSetupRemote = true
 [core]
         editor = vim
+[diff]
+	algorithm = histogram
+[branch]
+	sort = -committerdate
 [github]
 	user = BryceStevenWilley
 [log]
-    date = relative
+	date = relative
 [format]
-    pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
+	pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
 [commit]
-    verbose = true
+	verbose = true
 	gpgSign = true
+[url "git@github.com:"]
+	insteadOf = "https://github.com/"
 [alias]
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg = lg1
-	unpushed = log --branches --not --remotes --no-walk --decorate --pretty
+    unpushed = log --branches --not --remotes --no-walk --decorate --pretty
     checout = checkout
     chekcout = checkout
     cheekout = checkout
@@ -61,14 +71,19 @@
     bracnh = branch
 [merge]
 	ff = only
+	# conflictstyle = zdiff3
 [reere]
 	enabled = 1
+[init]
+    defaultBranch = main
+[blame]
+    ignoreRevsFile = .git-blame-ignore-revs
 [sendemail]
 	from = Bryce Willey <bryce.steven.willey@gmail.com>
 	smtpServer = smtp.gmail.com
 	smtpUser = bryce.steven.willey@gmail.com
 	smtpEncryption = tls
-    smtpServerPort = 587
+   	smtpServerPort = 587
 [gpg]
 	format = ssh
 [gpg "ssh"]

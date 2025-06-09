@@ -39,9 +39,15 @@ autocmd FileType make setlocal noexpandtab
 " Turns on spellcheck for Latex files.
 autocmd FileType latex setlocal spell spelllang=en_us
 
-
 " Stops you from navigating using up-down-left-right in normal mode.
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"noremap <Up> <NOP>
+"noremap <Down> <NOP>
+"noremap <Left> <NOP>
+"noremap <Right> <NOP>
+
+
+" Tidal Cycles stuff
+call plug#begin('~/.vim/plugged')
+Plug 'tidalcycles/vim-tidal'
+call plug#end()
+

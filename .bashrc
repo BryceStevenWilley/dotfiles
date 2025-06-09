@@ -111,8 +111,11 @@ export M2_HOME="/opt/maven"
 export PATH="$M2_HOME/bin:$PATH" 
 
 # export PATH="$PATH:/home/$USER/apache-cxf-4.0.0/bin"
-export PATH="$PATH:/home/$USER/Developer/LITLab/cxf/distribution/target/apache-cxf-4.0.1-SNAPSHOT/apache-cxf-4.0.1-SNAPSHOT/bin"
+export PATH="$PATH:/home/$USER/Developer/LITLab/code/apache-cxf-4.0.4/bin/"
 export PATH="$PATH:/home/$USER/.local/bin/Twine-2.5.1-Linux-x64"
+export PATH="$PATH:/home/$USER/.cargo/bin"
+
+export PATH="$PATH:/home/$USER/Developer/zig-linux-x86_64-0.14.0-dev.2034+56996a280/"
 
 # Loads NVM. Don't use too much, and slows down new terminals way too much
 #export NVM_DIR="$HOME/.nvm"
@@ -126,14 +129,26 @@ export PATH="$PATH:/home/$USER/.local/bin/Twine-2.5.1-Linux-x64"
 #exec 2>&3 3>&-
 
 # Enables github cli tool completions
-eval "$(gh completion -s bash)"
+# eval "$(gh completion -s bash)"
 
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/opt/gradle/gradle-7.5.1/bin
 
 PROMPT_COMMAND='CUR_PWD=`pwd`; echo -en "\033]0; $("basename" "$CUR_PWD") \a"'
 
-. /home/brycew/.asdf/asdf.sh
-. /home/brycew/.asdf/completions/asdf.bash
+# . /home/brycew/.asdf/asdf.sh
+# . /home/brycew/.asdf/completions/asdf.bash
 eval "$(direnv hook bash)"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"

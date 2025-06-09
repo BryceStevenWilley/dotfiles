@@ -6,4 +6,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"

@@ -85,6 +85,7 @@
     "cmake-tools-helper.cmake_download_path": "/home/brycew/.vscode/extensions/maddouri.cmake-tools-helper-0.2.1/cmake_download",
     "cmake.configureOnOpen": false,
     "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
     "vsicons.dontShowNewVersionMessage": true,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
@@ -131,24 +132,24 @@
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
-},
-		"editor.cursorStyle": "line",
-		"editor.lineNumbers": "on",
-        "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-        "notebook.cellToolbarLocation": {
-            "default": "right",
-            "jupyter-notebook": "left"
-        },
-        "editor.fontFamily": "'IBM Plex Mono', 'monospace', 'Nono Sans Mono', monospace, 'Droid Sans Fallback'",
-        "editor.renderWhitespace": "boundary",
-        "telemetry.telemetryLevel": "crash",
-        "redhat.telemetry.enabled": false,
-        "ooxml.outPutFilePath": "/tmp/ooxml_out.json",
-        "editor.detectIndentation": false,
-        "editor.tabSize": 2,
-        "[json]": {
-          "editor.defaultFormatter": "vscode.json-language-features"
-        },
+    },
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "notebook.cellToolbarLocation": {
+           "default": "right",
+           "jupyter-notebook": "left"
+       },
+       "editor.fontFamily": "'IBM Plex Mono', 'monospace', 'Nono Sans Mono', monospace, 'Droid Sans Fallback'",
+       "editor.renderWhitespace": "boundary",
+       "telemetry.telemetryLevel": "crash",
+       "redhat.telemetry.enabled": false,
+       "ooxml.outPutFilePath": "/tmp/ooxml_out.json",
+       "editor.detectIndentation": false,
+       "editor.tabSize": 2,
+       "[json]": {
+         "editor.defaultFormatter": "vscode.json-language-features"
+       },
         "[html]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
@@ -199,5 +200,6 @@
         "[scss]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
-        "explorer.confirmPasteNative": false,
+        "zig.path": "zig",
+        "zig.zls.enabled": "on"
 }
