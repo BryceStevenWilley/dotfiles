@@ -201,5 +201,6 @@
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "zig.path": "zig",
-        "zig.zls.enabled": "on"
+        "zig.zls.enabled": "on",
+        "chat.agent.enabled": false
 }

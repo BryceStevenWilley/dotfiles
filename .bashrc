@@ -118,9 +118,9 @@ export PATH="$PATH:/home/$USER/.cargo/bin"
 export PATH="$PATH:/home/$USER/Developer/zig-linux-x86_64-0.14.0-dev.2034+56996a280/"
 
 # Loads NVM. Don't use too much, and slows down new terminals way too much
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # Uncomment to turn off extra settings used when profiling bash start up
